@@ -16,8 +16,8 @@ function Home() {
   const fetchVideos = async () => {
     try {
       const url = category === 'All'
-        ? 'http://localhost:5000/api/videos'
-        : `http://localhost:5000/api/videos?category=${category}`
+        ? 'https://flavorreel-backend.onrender.com/api/videos'
+        : `https://flavorreel-backend.onrender.com/api/videos?category=${category}`
       const res = await axios.get(url)
       setVideos(res.data)
     } catch (err) {

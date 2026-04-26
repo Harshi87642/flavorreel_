@@ -17,7 +17,7 @@ function Watch() {
 
   const fetchVideo = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/videos/${id}`)
+      const res = await axios.get(`https://flavorreel-backend.onrender.com/api/videos/${id}`)
       setVideo(res.data)
       setLikesCount(res.data.likes?.length || 0)
       if (user) {
@@ -32,7 +32,7 @@ function Watch() {
     if (!token) return alert('Please login to like!')
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/videos/${id}/like`,
+        `https://flavorreel-backend.onrender.com/api/videos/${id}/like`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -48,7 +48,7 @@ function Watch() {
     if (!comment.trim()) return
     try {
       await axios.post(
-        `http://localhost:5000/api/videos/${id}/comment`,
+        `https://flavorreel-backend.onrender.com/api/videos/${id}/comment`,
         { text: comment },
         { headers: { Authorization: `Bearer ${token}` } }
       )

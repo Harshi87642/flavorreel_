@@ -42,7 +42,7 @@ function Upload() {
     formData.append('video', videoFile)
 
     try {
-      await axios.post('http://localhost:5000/api/videos/upload', formData, {
+      await axios.post('https://flavorreel-backend.onrender.com/api/videos/upload', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

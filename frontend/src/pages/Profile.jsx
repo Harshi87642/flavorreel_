@@ -18,7 +18,7 @@ function Profile() {
 
   const fetchProfile = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/auth/user/${id}`)
+      const res = await axios.get(`https://flavorreel-backend.onrender.com/api/auth/user/${id}`)
       setProfile(res.data)
       if (user) {
         setIsFollowing(res.data.followers?.includes(user._id))
@@ -30,7 +30,7 @@ function Profile() {
 
   const fetchUserVideos = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/videos/user/${id}`)
+      const res = await axios.get(`https://flavorreel-backend.onrender.com/api/videos/user/${id}`)
       setVideos(res.data)
     } catch (err) {
       console.log(err)
@@ -41,7 +41,7 @@ function Profile() {
     if (!token) return alert('Please login to follow!')
     try {
       await axios.put(
-        `http://localhost:5000/api/auth/follow/${id}`,
+        `https://flavorreel-backend.onrender.com/api/auth/follow/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       )
